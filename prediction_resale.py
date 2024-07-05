@@ -17,9 +17,12 @@ def selling_price_predict(town, flat_type, floor_area_sqm, flat_model, lease_com
     encoded_town = label_encoder_data["town"].transform([town])[0]
     encoded_flat_type = label_encoder_data["flat_type"].transform([flat_type])[0]
     encoded_flat_model = label_encoder_data["flat_model"].transform([flat_model])[0]
+
     data = np.array([[encoded_town, encoded_flat_type, floor_area_sqm, encoded_flat_model, lease_commence_date, sale_year, storey]])
+
     input_predict_selling_price = selling_price_prediction_model.predict(data)
     input_predict_selling_price = np.exp(input_predict_selling_price)
+
     return input_predict_selling_price
 
 if __name__ == "__main__":
@@ -31,8 +34,8 @@ if __name__ == "__main__":
     with st.sidebar:        
         page = option_menu(
                             menu_title='Flat Resale Price',
-                            options=['Home', 'Predict Selling Price'],
-                            icons=['gear', 'bar-chart-line'], 
+                            options=['Home', 'Predict Selling Price', 'Flat Resale Insights'],
+                            icons=['gear', 'map', 'bar-chart-line'], 
                             menu_icon="pin-map-fill",
                             default_index=0 ,
                             styles={"container": {"padding": "5!important"},
@@ -43,10 +46,14 @@ if __name__ == "__main__":
         )
 
 
-if page == "Data Home":
+if page == "Home":
 
-    st.header("Airbnb Data Retrieval and Data Preprocessing", divider = "rainbow")
+    st.header("Singapore Resale Flat Prices Predicting", divider = "rainbow")
     st.write("")
+
+    st.subheader(":orange[Application Properties :]")
+    st.subheader(":one: :grey[_Beneficial for both potential buyers and sellers in the Singapore housing market_.]")
+    st.subheader(":two: :grey[_Buyers can use the application to estimate resale prices and make informed decisions, while sellers can get an idea of their flat's potential market value_.]")
             
 if page == "Predict Selling Price":
 
@@ -89,5 +96,10 @@ if page == "Predict Selling Price":
             col4.success(f"Predicted Resale Price : S$ {round(prediction_1[0])} 💰")
         except:
             col4.error("Enter valid values 🚨")
+    
+if page == "Flat Resale Insights":
+
+    st.header("Singapore Resale Flat Prices Insights", divider = "rainbow")
+    st.write("")
 
             
