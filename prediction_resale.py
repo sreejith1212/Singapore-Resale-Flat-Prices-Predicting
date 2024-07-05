@@ -34,8 +34,8 @@ if __name__ == "__main__":
     with st.sidebar:        
         page = option_menu(
                             menu_title='Flat Resale Price',
-                            options=['Home', 'Predict Selling Price', 'Flat Resale Insights'],
-                            icons=['gear', 'map', 'bar-chart-line'], 
+                            options=['Home', 'Predict Selling Price'],
+                            icons=['gear', 'bar-chart-line'], 
                             menu_icon="pin-map-fill",
                             default_index=0 ,
                             styles={"container": {"padding": "5!important"},
@@ -96,10 +96,7 @@ if page == "Predict Selling Price":
             col4.success(f"Predicted Resale Price : S$ {round(prediction_1[0])} 💰")
         except:
             col4.error("Enter valid values 🚨")
-    
-if page == "Flat Resale Insights":
 
-    st.header("Singapore Resale Flat Prices Insights", divider = "rainbow")
-    st.write("")
+    
 
             
