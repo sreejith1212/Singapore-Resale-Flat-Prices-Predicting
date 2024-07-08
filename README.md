@@ -10,7 +10,7 @@ The objective of this project is to develop a machine learning model and deploy 
 2) Install all required packages from requirements.txt file using command: "pip install -r requirements.txt"
 
 ## Usage
-1) Run the notebook "industrial_copper_modelling.ipynb" cells.
+1) Run the notebook "flat_resale_price_prediction.ipynb" cells.
 2) To start the app, run command: "streamlit run prediction_resale.py".
 3) For flat resale price prediction, in the "Predict Selling Price" page, input the required features and click on "Predict Selling Price" button.
 
