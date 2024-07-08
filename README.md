@@ -15,7 +15,7 @@ The objective of this project is to develop a machine learning model and deploy 
 3) For flat resale price prediction, in the "Predict Selling Price" page, input the required features and click on "Predict Selling Price" button.
 
 ## Features
-1) Setting up Streamlit App: Creating a user-friendly UI using Streamlit for predicting lead status and selling price.
+1) Setting up Streamlit App: Creating a user-friendly UI using Streamlit for predicting selling price.
 2) Data Cleaning and Preprocessing: Ensuring data quality and preparing it for analysis and model building.
 3) Feature Engineering: Creating new features from existing data to improve model performance.
 4) Model Building and Evaluation: Developing machine learning models to predict optimal re-selling price, and evaluating their performance.
